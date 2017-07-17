@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="project-calendar">
+      <div class="row">
+          <div class="col-xs-12 col-sm-8">
+              <h2 class="con-med-alt">Calendar</h2>
+          </div>
+      </div>
+      <div class="project-cal clearfix">
+          <div *ngFor="let project of projects; let i = index" class="project clearfix">
+              <!--project-cal-list-->
+              <div class="project-cal-list clearfix">
+                  <div [ngClass]="{'last-project': i === projects.length - 1}">
+                      <a class="project-name trunc">{{project.name}}</a>
+                      <span *ngIf="project.startDate">{{project.startDate | date : 'MMM yyyy'}} - {{project.endDate | date : 'MMM yyyy'}}</span>
+                  </div>
+              </div>
+              <!--/project-cal-list-->
+              <!--project-cal-details-->
+              <div class="project-cal-details">
+                  <div class="project-row">
+                      <div class="projectsteps clearfix" [style.left.px]="projectOffset.get(project.id)">
+                            <ol class="projectsteps clearfix">
+                              <li *ngFor="let task of taskByProjectMap.get(project.id); let i = index" class="task-{{i}}"
+                                [style.margin-left.px]="task.daysOffset <= NUMBER_OF_DAYS_CUTOFF ? 0 : task.daysOffsetWithMultiplier">
+                                <div [style.width.px]="task.width"><span class="trunc" *ngIf="task.startDate" title="{{task.name}}: {{task.startDate | date : 'MM/dd/yyyy'}}-{{task.endDate | date : 'MM/dd/yyyy'}}">{{task.name}}</span></div>
+                              </li>
+                            </ol>
+                      </div>
+                  </div>
+              </div> 
+              <!--/project-cal-details-->
+          </div>
+          <!--project-dates-->
+          <div class="project-dates">
+              <ol class="clearfix">
+                <!--possibly track by $index-->
+                  <li *ngFor="let calendarDate of calendarDates; let i = index">
+                      <span class="calendar-date" *ngIf="i === 0 || (i === calendarDates.length - 1)">{{calendarDate | date : 'MMM yyyy'}}</span>
+                      <span class="calendar-date" *ngIf="i !== 0 && (i !== calendarDates.length - 1)">{{calendarDate | date : 'MMM'}}</span>
+                  </li>
+              </ol>
+          </div>
+          <!--/project-dates-->
+          <!--project-cal-today-->
+          <div class="project-cal-today" [style.width.px]="todayOffset" [style.height.px]="52 * projects.length">
+              <div class="inner">
+                  <div class="today">Today</div>
+              </div>
+          </div>
+          <!--/project-cal-today-->
+      </div>
+  </div>
+</div>

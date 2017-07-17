@@ -1,0 +1,212 @@
+.project-calendar {
+    width: 824px;
+    margin: 0 auto;
+}
+.project-cal {
+    border: 2px solid $gray-light;
+    margin-top: 15px;
+    position: relative;
+}
+.project-cal-list {
+    background: $white;
+    border-right: 2px solid $gray-light;
+    float: left;
+    width: 158px;
+    font-size: 14px;
+}
+.project-cal-list > div {
+    border-bottom: 2px solid $gray-light;
+    height: 52px;
+    padding: 10px;
+}
+.project-cal-list .project-name {
+    display: block;
+}
+.project-cal-list .last-project {
+    border-bottom-color: $white;
+}
+.project-cal-list a {
+    color: $text-color-default
+}
+.project-cal-list .trunc {
+    display: block;
+    max-width: 132px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.project-cal-details {
+    background: repeating-linear-gradient(to right, $gray-light, $gray-light 1px, $white 1px, $white 55.3333333333px);
+    overflow: hidden;
+    position: relative;
+}
+.project-row {
+    height: 52px;
+    padding: 6px 0 0 2px;
+}
+.projectsteps {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 999;
+}
+.projectsteps div {
+    height: 35px;
+    min-width: 10px;
+    white-space: nowrap;
+}
+.projectsteps li {
+    border-bottom: 1px solid #e1e1e1;
+    border-left: 1px solid #d8d8d8;
+    border-top: 1px solid #e1e1e1;
+    display: inline-block;
+    height: 37px;
+    position: absolute;
+    text-align: center;
+}
+.projectsteps li div:after {
+    background: inherit;
+    box-shadow: 1px -1px 0 0 #d8d8d8;
+    content: "";
+    height: 26px;
+    position: absolute;
+    right: -11px;
+    top: -1px;
+    transform: translateY(6px) rotate(45deg);
+    width: 25px;
+    z-index: 100;
+}
+.projectsteps li div {
+    background: inherit;
+    padding: 10px;
+    position: relative;
+}
+.projectsteps .trunc {
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 101;
+    padding-right: 10px;
+    width: 100%;
+    line-height:15px;
+}
+.projectsteps li.task-0  {
+    background: #edeff0;
+    color: $dd-blue;
+    z-index: 500;
+    &:hover {background: $custom-red-hover};   
+}
+.projectsteps li.task-1  {
+    background: #edeff0;
+    color: $dd-green;
+    z-index: 400;
+    &:hover {background: $custom-red-hover};
+}
+.projectsteps li.task-2  {
+    background: #edeff0;
+    color: $dd-orange;
+    &:hover {background: $custom-red-hover};
+    z-index: 300;
+}
+.projectsteps li.task-3  {
+    background: #edeff0;
+    color: $dd-red;
+    z-index: 200;
+    &:hover {background: $custom-red-hover};
+}
+.projectsteps li.task-0.isCurrent  {
+    background: $dd-blue;
+    border-color: $dd-blue;
+    color: $white;
+    &:hover {background: $dd-blue;}
+    div:after {box-shadow: 1px -1px 0 0 $dd-blue;}
+}
+.projectsteps li.task-0.isCurrent:after {
+    border-left-color: $dd-blue;
+    &:hover{background: $dd-blue;}
+}
+.projectsteps li.task-1.isCurrent {
+    background: $dd-green;
+    border-color: $dd-green;
+    color: $white;
+    &:hover {background: $dd-green;}
+    div:after {box-shadow: 1px -1px 0 0 $dd-green;}
+}
+.projectsteps li.task-1.isCurrent:after {
+    border-left-color: $dd-green;
+    &:hover {background: $dd-green;}
+}
+.projectsteps li.task-2.isCurrent {
+    background: $dd-orange;
+    border-color: $dd-orange;
+    color: $white;
+    &:hover{background: $dd-orange;}
+    div:after {box-shadow: 1px -1px 0 0 $dd-orange;}
+}
+.projectsteps li.task-2.isCurrent:after {
+    border-left-color: $dd-orange;
+    &:hover {background: $dd-orange;}
+}
+.projectsteps li.task-3.isCurrent {
+    background-color: $dd-red;
+    border-color: $dd-red;
+    color: $white;;
+    &:hover {background: $dd-red;}
+    div:after {box-shadow: 1px -1px 0 0 $dd-red;}
+}
+.projectsteps li.task-3.isCurrent:after {
+    border-left-color: $dd-red;
+    &:hover {background: $dd-red;}
+}
+.project-dates {
+    bottom: -15px;
+    height: 15px;
+    overflow: hidden;
+    padding-left: 155px;
+    position: absolute;
+}
+.project-dates ol {
+    font-size: $extra-small;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.project-dates li {
+    display: block;
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+    width: 55.3333333333px;
+}
+.project-cal-today {
+    border-right: 2px solid $bg-dark;
+    left: 158px;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    @media (min-width: $screen-sm) {
+        display: block;
+    }
+}
+.project-cal-today .inner {
+    position: relative;
+}
+.project-cal-today .today {
+    background-color: $bg-dark;
+    border-radius: 2px;
+    color: $white;
+    font-size: 10px;
+    margin: 0 -21px 0 0;
+    padding: 3px 5px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    top: -19px;
+    @media (min-width: $screen-sm) {
+        display: inline;
+    }
+}
