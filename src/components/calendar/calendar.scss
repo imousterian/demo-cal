@@ -117,50 +117,6 @@
     z-index: 200;
     &:hover {background: $custom-red-hover};
 }
-.projectsteps li.task-0.isCurrent  {
-    background: $dd-blue;
-    border-color: $dd-blue;
-    color: $white;
-    &:hover {background: $dd-blue;}
-    div:after {box-shadow: 1px -1px 0 0 $dd-blue;}
-}
-.projectsteps li.task-0.isCurrent:after {
-    border-left-color: $dd-blue;
-    &:hover{background: $dd-blue;}
-}
-.projectsteps li.task-1.isCurrent {
-    background: $dd-green;
-    border-color: $dd-green;
-    color: $white;
-    &:hover {background: $dd-green;}
-    div:after {box-shadow: 1px -1px 0 0 $dd-green;}
-}
-.projectsteps li.task-1.isCurrent:after {
-    border-left-color: $dd-green;
-    &:hover {background: $dd-green;}
-}
-.projectsteps li.task-2.isCurrent {
-    background: $dd-orange;
-    border-color: $dd-orange;
-    color: $white;
-    &:hover{background: $dd-orange;}
-    div:after {box-shadow: 1px -1px 0 0 $dd-orange;}
-}
-.projectsteps li.task-2.isCurrent:after {
-    border-left-color: $dd-orange;
-    &:hover {background: $dd-orange;}
-}
-.projectsteps li.task-3.isCurrent {
-    background-color: $dd-red;
-    border-color: $dd-red;
-    color: $white;;
-    &:hover {background: $dd-red;}
-    div:after {box-shadow: 1px -1px 0 0 $dd-red;}
-}
-.projectsteps li.task-3.isCurrent:after {
-    border-left-color: $dd-red;
-    &:hover {background: $dd-red;}
-}
 .project-dates {
     bottom: -15px;
     height: 15px;
