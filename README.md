@@ -6,5 +6,6 @@ To install and run:
 * `npm install`
 * `npm run start`
 
-Project represents a visualization of task duration by project, linked to calendar dates.
+This is a small visualization of tasks within projects. Each project has several tasks, and the calendar shows multiple projects. The calendar spans 12 months: it starts 3 months before, and ends 9 months after today. Tasks are visually linked to calendar dates.
+
 ![alt text](cal.png)

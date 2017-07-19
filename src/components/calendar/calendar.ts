@@ -65,7 +65,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   };
 
   /*
-    Filters out projects outside of calendar window
+    Filters out projects outside of calendar window (defined as 3 months ago from today, and nine months aheads of today)
   */
   filterProjectsByCalendarDate(projects: Project[]): Project[] {
     let copy = [...projects];

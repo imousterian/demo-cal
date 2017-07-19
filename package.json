@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "bnr test",
     "start": "bnr server"
   },
   "author": "MS",
@@ -15,6 +15,12 @@
       "env": {
         "PORT_NUM": 8200,
         "NODE_ENV": "development"
+      }
+    },
+    "test": {
+      "command": "karma start ./config/karma.conf.ts",
+      "env": {
+        "NODE_ENV": "test" 
       }
     }
   },
